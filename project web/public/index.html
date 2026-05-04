@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduAI — Course Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- ─── NAVBAR ───────────────────────────────────────────── -->
+<nav class="navbar">
+    <div class="nav-logo">
+        <i class="fas fa-graduation-cap"></i>
+        <span>EduAI</span>
+    </div>
+    <div class="nav-links" id="nav-links">
+        <a href="#" onclick="showPage('home')" id="nav-home" class="active">Home</a>
+        <a href="#" onclick="showPage('courses')" id="nav-courses">Courses</a>
+        <a href="#" onclick="showPage('dashboard')" id="nav-dashboard" style="display:none">Dashboard</a>
+    </div>
+    <div class="nav-auth" id="nav-auth">
+        <button class="btn-outline" onclick="showPage('login')">Login</button>
+        <button class="btn-primary" onclick="showPage('register')">Sign Up</button>
+    </div>
+    <div class="nav-user" id="nav-user" style="display:none">
+        <span id="nav-username"><i class="fas fa-user-circle"></i> <span id="nav-uname-text"></span></span>
+        <button class="btn-outline" onclick="logout()">Logout</button>
+    </div>
+</nav>
+
+<!-- ─── HOME PAGE ─────────────────────────────────────────── -->
+<div id="page-home" class="page active">
+    <div class="hero">
+        <div class="hero-content">
+            <div class="hero-badge"><i class="fas fa-bolt"></i> AI-Powered Learning</div>
+            <h1>Learn. Build.<br><span class="gradient-text">Become an AI Expert.</span></h1>
+            <p>Join thousands of students building the future with cutting-edge AI and programming courses taught by industry experts.</p>
+            <div class="hero-btns">
+                <button class="btn-primary btn-lg" onclick="showPage('courses')">Explore Courses <i class="fas fa-arrow-right"></i></button>
+                <button class="btn-ghost btn-lg" onclick="showPage('register')">Sign Up Free</button>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-card"><span>4+</span><p>Courses</p></div>
+            <div class="stat-card"><span>100%</span><p>Practical</p></div>
+            <div class="stat-card"><span>24/7</span><p>Access</p></div>
+        </div>
+    </div>
+</div>
+
+<!-- ─── COURSES PAGE ───────────────────────────────────────── -->
+<div id="page-courses" class="page">
+    <div class="page-header">
+        <h2>All Courses</h2>
+        <div class="filters">
+            <button class="filter-btn active" onclick="filterCourses('all', this)">All</button>
+            <button class="filter-btn" onclick="filterCourses('Programming', this)">Programming</button>
+            <button class="filter-btn" onclick="filterCourses('AI & ML', this)">AI & ML</button>
+            <button class="filter-btn" onclick="filterCourses('Web Dev', this)">Web Dev</button>
+        </div>
+    </div>
+    <div class="courses-grid" id="courses-grid">
+        <div class="loading-spinner"><i class="fas fa-circle-notch fa-spin"></i></div>
+    </div>
+</div>
+
+<!-- ─── COURSE DETAIL PAGE ────────────────────────────────── -->
+<div id="page-course-detail" class="page">
+    <button class="back-btn" onclick="showPage('courses')"><i class="fas fa-arrow-left"></i> Back</button>
+    <div id="course-detail-content"></div>
+</div>
+
+<!-- ─── DASHBOARD PAGE ────────────────────────────────────── -->
+<div id="page-dashboard" class="page">
+    <div class="page-header">
+        <h2><i class="fas fa-th-large"></i> My Dashboard</h2>
+        <p id="dash-welcome">Welcome back!</p>
+    </div>
+    <div id="dashboard-content">
+        <div class="empty-state">
+            <i class="fas fa-book-open"></i>
+            <p>You haven't enrolled in any courses yet.</p>
+            <button class="btn-primary" onclick="showPage('courses')">Browse Courses</button>
+        </div>
+    </div>
+</div>
+
+<!-- ─── LOGIN PAGE ────────────────────────────────────────── -->
+<div id="page-login" class="page">
+    <div class="auth-container">
+        <div class="auth-card">
+            <h2><i class="fas fa-sign-in-alt"></i> Welcome Back</h2>
+            <p class="auth-sub">Log in to access your courses</p>
+            <div id="login-error" class="alert-error" style="display:none"></div>
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" id="login-email" placeholder="you@example.com">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="login-password" placeholder="••••••••">
+            </div>
+            <button class="btn-primary full-width" onclick="login()">Login</button>
+            <p class="auth-footer">Don't have an account? <a href="#" onclick="showPage('register')">Sign Up</a></p>
+        </div>
+    </div>
+</div>
+
+<!-- ─── REGISTER PAGE ─────────────────────────────────────── -->
+<div id="page-register" class="page">
+    <div class="auth-container">
+        <div class="auth-card">
+            <h2><i class="fas fa-user-plus"></i> Create Account</h2>
+            <p class="auth-sub">Join EduAI and start learning today</p>
+            <div id="register-error" class="alert-error" style="display:none"></div>
+            <div id="register-success" class="alert-success" style="display:none"></div>
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="reg-name" placeholder="Your Name">
+            </div>
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" id="reg-email" placeholder="you@example.com">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="reg-password" placeholder="Min. 6 characters">
+            </div>
+            <button class="btn-primary full-width" onclick="register()">Create Account</button>
+            <p class="auth-footer">Already registered? <a href="#" onclick="showPage('login')">Login</a></p>
+        </div>
+    </div>
+</div>
+
+<!-- ─── VIDEO PLAYER MODAL ────────────────────────────────── -->
+<div class="modal-overlay" id="video-modal" onclick="closeVideoModal(event)">
+    <div class="video-modal-box">
+        <button class="close-modal" onclick="closeVideoModal()"><i class="fas fa-times"></i></button>
+        <h3 id="modal-lesson-title">Lesson Title</h3>
+        <div class="video-wrapper">
+            <iframe id="video-iframe" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+
+<!-- ─── TOAST ─────────────────────────────────────────────── -->
+<div id="toast" class="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>

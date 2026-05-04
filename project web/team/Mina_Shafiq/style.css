@@ -1,0 +1,133 @@
+/* ============================================================
+   style.css — Complete Application Styling
+   Author: Mina Shafiq Samir
+   Role: UI/UX Design & CSS Styling
+   ============================================================ */
+
+/* --- CSS Variables (Design Tokens) --- */
+/* These define the color scheme and reusable values */
+:root {
+    --bg: #0a0f1e;           /* Main background (dark blue) */
+    --bg2: #111827;          /* Secondary background */
+    --surface: #1a2235;      /* Card/panel background */
+    --surface2: #1f2d45;     /* Hover/active surface */
+    --border: #2a3a55;       /* Border color */
+    --primary: #6366f1;      /* Main brand color (indigo/purple) */
+    --primary-hover: #4f46e5;/* Darker primary for hover */
+    --secondary: #06b6d4;    /* Accent color (cyan) */
+    --success: #10b981;      /* Success/green */
+    --danger: #ef4444;       /* Error/red */
+    --warning: #f59e0b;      /* Warning/yellow */
+    --text: #f1f5f9;         /* Main text color (light) */
+    --muted: #64748b;        /* Secondary text (gray) */
+    --radius: 14px;          /* Border radius for cards */
+    --radius-sm: 8px;        /* Small border radius */
+    --shadow: 0 4px 24px rgba(0,0,0,0.4);
+    --glow: 0 0 30px rgba(99,102,241,0.15);
+}
+
+/* --- Reset & Base --- */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    min-height:100vh;
+}
+
+/* --- Navbar --- */
+.navbar{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:0 2.5rem; height:64px;
+    background:rgba(10,15,30,0.85);
+    backdrop-filter:blur(12px);   /* Glassmorphism effect */
+    border-bottom:1px solid var(--border);
+    position:sticky; top:0; z-index:100;
+}
+
+/* --- Buttons --- */
+.btn-primary{
+    background:linear-gradient(135deg,var(--primary),var(--primary-hover));
+    color:#fff; border:none; border-radius:var(--radius-sm);
+    padding:.55rem 1.2rem; font-weight:600; cursor:pointer;
+    transition:transform .2s, box-shadow .2s;
+}
+.btn-primary:hover{
+    transform:translateY(-1px);
+    box-shadow:0 4px 12px rgba(99,102,241,.4);
+}
+
+/* --- Page Animation --- */
+.page{display:none; padding:2.5rem; max-width:1200px; margin:0 auto;}
+.page.active{display:block; animation:fadeUp .4s ease;}
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(16px)}
+    to{opacity:1; transform:translateY(0)}
+}
+
+/* --- Hero Section --- */
+.hero{
+    min-height:calc(100vh - 64px);
+    display:flex; flex-direction:column;
+    justify-content:center;
+    background:radial-gradient(ellipse at 70% 50%,rgba(99,102,241,.12) 0%,transparent 70%);
+}
+.gradient-text{
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* --- Course Cards Grid --- */
+.courses-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+    gap:1.5rem;
+}
+.course-card{
+    background:var(--surface); border:1px solid var(--border);
+    border-radius:var(--radius); cursor:pointer;
+    transition:.25s;
+}
+.course-card:hover{
+    transform:translateY(-4px);
+    box-shadow:var(--shadow);
+    border-color:var(--primary);
+}
+
+/* --- Auth Forms --- */
+.auth-card{
+    background:var(--surface); border:1px solid var(--border);
+    border-radius:var(--radius); padding:2.5rem;
+    max-width:440px; box-shadow:var(--shadow);
+}
+.form-group input{
+    width:100%; padding:.75rem 1rem;
+    background:var(--bg2); border:1px solid var(--border);
+    border-radius:var(--radius-sm); color:var(--text);
+}
+.form-group input:focus{
+    border-color:var(--primary);
+    box-shadow:0 0 0 3px rgba(99,102,241,.15);
+}
+
+/* --- Toast Notification --- */
+.toast{
+    position:fixed; bottom:24px; right:24px;
+    background:var(--success); color:#fff;
+    padding:.9rem 1.5rem; border-radius:var(--radius-sm);
+    transform:translateX(200%); transition:transform .35s;
+    z-index:2000;
+}
+.toast.show{transform:translateX(0);}
+.toast.error{background:var(--danger);}
+
+/* KEY CONCEPTS:
+   - CSS Variables (:root) = reusable values across the stylesheet
+   - Flexbox (display:flex) = 1D layout (row or column)
+   - CSS Grid (display:grid) = 2D layout (rows AND columns)
+   - Glassmorphism = backdrop-filter:blur() for frosted glass effect
+   - Transitions = smooth animations on hover/state changes
+   - @keyframes = custom animations (fadeUp)
+   - Responsive: auto-fill + minmax = auto-adjusting grid columns
+*/
