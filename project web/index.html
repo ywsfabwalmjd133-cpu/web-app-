@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- ==========================================================
+     FILE: index.html — EduAI Course Management System
+     A static platform for AI & programming courses
+     ========================================================== -->
+
+<head>
+
+  <!-- -------------------------------------------------------
+       Nada Ebrahim Mohamed Elsayed
+       Role: Project Leader — Page Head & Navigation Bar
+       ------------------------------------------------------- -->
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduAI — Course Management System</title>
+  <meta name="description" content="EduAI is a modern online learning platform for AI and programming courses." />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="nav-logo">
+      <i class="fas fa-graduation-cap"></i>
+      <span>EduAI</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#courses">Courses</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <div class="nav-auth">
+      <a href="#login" class="btn-outline">Login</a>
+      <a href="#register" class="btn-primary">Sign Up</a>
+    </div>
+  </nav>
+
+  <!-- -------------------------------------------------------
+       Ahmed Sherif Abdel Moneim El Sayed
+       Role: Database Design — Hero Section & Platform Info
+       ------------------------------------------------------- -->
+
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <div class="hero-badge"><i class="fas fa-bolt"></i> AI-Powered Learning</div>
+      <h1>Learn. Build.<br /><span class="gradient-text">Become an AI Expert.</span></h1>
+      <p>Join thousands of students building the future with cutting-edge AI and programming courses taught by industry
+        experts.</p>
+      <div class="hero-btns">
+        <a href="#courses" class="btn-primary btn-lg">Explore Courses <i class="fas fa-arrow-right"></i></a>
+        <a href="#register" class="btn-ghost btn-lg">Sign Up Free</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-ring"></div>
+      <div class="float-card fc1"><i class="fas fa-robot"></i><span>AI & Machine Learning</span></div>
+      <div class="float-card fc2"><i class="fas fa-code"></i><span>Web Development</span></div>
+      <div class="float-card fc3"><i class="fas fa-brain"></i><span>Deep Learning</span></div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <div class="stats-bar">
+    <div class="stat-item"><span class="stat-num">4,500+</span><span class="stat-lbl">Students</span></div>
+    <div class="stat-item"><span class="stat-num">20+</span><span class="stat-lbl">Courses</span></div>
+    <div class="stat-item"><span class="stat-num">95%</span><span class="stat-lbl">Satisfaction</span></div>
+    <div class="stat-item"><span class="stat-num">24/7</span><span class="stat-lbl">Access</span></div>
+  </div>
+
+  <!-- -------------------------------------------------------
+       Youssef Alaa El Din Mohamed Mokheimer
+       Role: Courses API — Courses Section & Course Cards
+       ------------------------------------------------------- -->
+
+  <section id="courses" class="section">
+    <div class="section-head">
+      <span class="section-tag">Our Courses</span>
+      <h2>Explore Top Courses</h2>
+      <p>Handpicked courses designed to take you from beginner to professional</p>
+    </div>
+    <div class="filter-bar">
+      <button class="filter-btn active">All</button>
+      <button class="filter-btn">Programming</button>
+      <button class="filter-btn">AI &amp; ML</button>
+      <button class="filter-btn">Web Dev</button>
+    </div>
+    <div class="courses-grid">
+
+      <div class="course-card">
+        <div class="course-thumb t-ai"><span>🤖</span><span class="badge b-beginner">Beginner</span></div>
+        <div class="course-body">
+          <div class="course-cat">AI &amp; ML</div>
+          <h3>Introduction to Artificial Intelligence</h3>
+          <p>Learn the fundamentals of AI including machine learning, neural networks, and intelligent systems.</p>
+          <div class="course-meta">
+            <span><i class="fas fa-user-tie"></i> Dr. Sarah Ahmed</span>
+            <span><i class="fas fa-clock"></i> 12 weeks</span>
+          </div>
+          <a href="#register" class="btn-enroll">Enroll Now</a>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <div class="course-thumb t-web"><span>🌐</span><span class="badge b-inter">Intermediate</span></div>
+        <div class="course-body">
+          <div class="course-cat">Web Dev</div>
+          <h3>Full-Stack Web Development</h3>
+          <p>Master HTML, CSS, JavaScript, Node.js and build real-world web applications from scratch.</p>
+          <div class="course-meta">
+            <span><i class="fas fa-user-tie"></i> Eng. Omar Hassan</span>
+            <span><i class="fas fa-clock"></i> 16 weeks</span>
+          </div>
+          <a href="#register" class="btn-enroll">Enroll Now</a>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <div class="course-thumb t-py"><span>🐍</span><span class="badge b-beginner">Beginner</span></div>
+        <div class="course-body">
+          <div class="course-cat">Programming</div>
+          <h3>Python Programming Masterclass</h3>
+          <p>From basics to advanced Python programming with hands-on projects and real examples.</p>
+          <div class="course-meta">
+            <span><i class="fas fa-user-tie"></i> Dr. Mona Khalil</span>
+            <span><i class="fas fa-clock"></i> 10 weeks</span>
+          </div>
+          <a href="#register" class="btn-enroll">Enroll Now</a>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <div class="course-thumb t-dl"><span>🧠</span><span class="badge b-adv">Advanced</span></div>
+        <div class="course-body">
+          <div class="course-cat">AI &amp; ML</div>
+          <h3>Deep Learning with TensorFlow</h3>
+          <p>Advanced neural networks, CNNs, RNNs and transformer architectures for real-world AI projects.</p>
+          <div class="course-meta">
+            <span><i class="fas fa-user-tie"></i> Dr. Yasser Nabil</span>
+            <span><i class="fas fa-clock"></i> 14 weeks</span>
+          </div>
+          <a href="#register" class="btn-enroll">Enroll Now</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- -------------------------------------------------------
+       Nour El Din Mohamed Shaker
+       Role: Authentication — Features Section & Cards
+       ------------------------------------------------------- -->
+
+  <section id="features" class="section section-dark">
+    <div class="section-head">
+      <span class="section-tag">Why EduAI?</span>
+      <h2>Everything You Need to Succeed</h2>
+      <p>Our platform provides all the tools and resources for effective learning</p>
+    </div>
+    <div class="features-grid">
+      <div class="feat-card">
+        <div class="feat-icon"><i class="fas fa-play-circle"></i></div>
+        <h3>HD Video Lessons</h3>
+        <p>Watch crystal-clear video lectures with subtitles, playback controls, and offline access.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon"><i class="fas fa-certificate"></i></div>
+        <h3>Certificates</h3>
+        <p>Earn industry-recognized certificates upon completion to boost your career profile.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon"><i class="fas fa-users"></i></div>
+        <h3>Community Support</h3>
+        <p>Join a vibrant community of learners, share ideas, and get help from experts anytime.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon"><i class="fas fa-chart-line"></i></div>
+        <h3>Progress Tracking</h3>
+        <p>Monitor your learning journey with detailed progress reports and milestone badges.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon"><i class="fas fa-mobile-alt"></i></div>
+        <h3>Learn Anywhere</h3>
+        <p>Access all content from any device — desktop, tablet, or mobile, at any time.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon"><i class="fas fa-infinity"></i></div>
+        <h3>Lifetime Access</h3>
+        <p>Get unlimited lifetime access to all enrolled courses and future content updates.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- -------------------------------------------------------
+     Youssef Hani Kamel Ibrahim Abu El Magd
+       Role: Enrollment System — Login & Register Forms
+       ------------------------------------------------------- -->
+
+  <section id="login" class="section auth-section">
+    <div class="auth-wrap">
+      <div class="auth-card">
+        <h2><i class="fas fa-sign-in-alt"></i> Welcome Back</h2>
+        <p class="auth-sub">Log in to access your courses</p>
+        <div class="form-group">
+          <label for="login-email">Email Address</label>
+          <input type="email" id="login-email" placeholder="you@example.com" />
+        </div>
+        <div class="form-group">
+          <label for="login-pass">Password</label>
+          <input type="password" id="login-pass" placeholder="••••••••" />
+        </div>
+        <button class="btn-primary full-w">Login</button>
+        <p class="auth-foot">Don't have an account? <a href="#register">Sign Up</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="register" class="section auth-section">
+    <div class="auth-wrap">
+      <div class="auth-card">
+        <h2><i class="fas fa-user-plus"></i> Create Account</h2>
+        <p class="auth-sub">Join EduAI and start learning today</p>
+        <div class="form-group">
+          <label for="reg-name">Full Name</label>
+          <input type="text" id="reg-name" placeholder="Your Name" />
+        </div>
+        <div class="form-group">
+          <label for="reg-email">Email Address</label>
+          <input type="email" id="reg-email" placeholder="you@example.com" />
+        </div>
+        <div class="form-group">
+          <label for="reg-pass">Password</label>
+          <input type="password" id="reg-pass" placeholder="Min. 6 characters" />
+        </div>
+        <button class="btn-primary full-w">Create Account</button>
+        <p class="auth-foot">Already registered? <a href="#login">Login</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- -------------------------------------------------------
+       Mostafa Fares Abu Horeira
+       Role: Dashboard API — Dashboard Preview Section
+       ------------------------------------------------------- -->
+
+  <section id="about" class="section section-dark dashboard-section">
+    <div class="section-head">
+      <span class="section-tag">Student Dashboard</span>
+      <h2>Track Your Learning Journey</h2>
+      <p>Stay on top of your progress with our intuitive student dashboard</p>
+    </div>
+    <div class="dashboard-preview">
+      <div class="dash-sidebar">
+        <div class="dash-user">
+          <div class="avatar"><i class="fas fa-user-circle"></i></div>
+          <div>
+            <div class="dash-name">Ahmed Student</div>
+            <div class="dash-email">ahmed@example.com</div>
+          </div>
+        </div>
+        <ul class="dash-menu">
+          <li class="active"><i class="fas fa-th-large"></i> Dashboard</li>
+          <li><i class="fas fa-book"></i> My Courses</li>
+          <li><i class="fas fa-certificate"></i> Certificates</li>
+          <li><i class="fas fa-cog"></i> Settings</li>
+        </ul>
+      </div>
+      <div class="dash-main">
+        <div class="dash-cards">
+          <div class="dash-stat-card"><i class="fas fa-book-open"></i><span>3</span>
+            <p>Enrolled</p>
+          </div>
+          <div class="dash-stat-card"><i class="fas fa-check-circle"></i><span>1</span>
+            <p>Completed</p>
+          </div>
+          <div class="dash-stat-card"><i class="fas fa-star"></i><span>87%</span>
+            <p>Avg. Score</p>
+          </div>
+        </div>
+        <div class="dash-courses-list">
+          <div class="dash-course-item">
+            <span>🤖</span>
+            <div class="dash-c-info">
+              <div class="dash-c-title">Intro to AI</div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width:65%"></div>
+              </div>
+              <div class="dash-c-pct">65%</div>
+            </div>
+          </div>
+          <div class="dash-course-item">
+            <span>🌐</span>
+            <div class="dash-c-info">
+              <div class="dash-c-title">Full-Stack Web Dev</div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width:30%"></div>
+              </div>
+              <div class="dash-c-pct">30%</div>
+            </div>
+          </div>
+          <div class="dash-course-item">
+            <span>🐍</span>
+            <div class="dash-c-info">
+              <div class="dash-c-title">Python Masterclass</div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width:100%"></div>
+              </div>
+              <div class="dash-c-pct">100% ✅</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- -------------------------------------------------------
+      Youssef Hani Kamel Ibrahim Abu El Magd
+       Role: Progress Tracking — Testimonials Section
+       ------------------------------------------------------- -->
+
+  <section class="section testimonials-section">
+    <div class="section-head">
+      <span class="section-tag">Student Reviews</span>
+      <h2>What Our Students Say</h2>
+      <p>Real feedback from students who transformed their careers with EduAI</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"EduAI completely changed my career path. The AI course was incredibly practical and well-structured. Highly
+          recommended for anyone starting out!"</p>
+        <div class="t-author">
+          <div class="t-avatar">M</div>
+          <div><strong>Mohamed Ali</strong><span>Software Engineer</span></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"The Python masterclass gave me everything I needed to land my first dev job. The content is clear, engaging,
+          and the community is very supportive."</p>
+        <div class="t-author">
+          <div class="t-avatar">S</div>
+          <div><strong>Sara Hassan</strong><span>Python Developer</span></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"Best online learning platform I have ever used. The dashboard makes tracking progress so easy and the video
+          quality is outstanding. Love it!"</p>
+        <div class="t-author">
+          <div class="t-avatar">K</div>
+          <div><strong>Karim Nour</strong><span>AI Researcher</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- -------------------------------------------------------
+       Nada Mohamed Shaker
+       Role: Frontend Interface — CTA & Newsletter Section
+       ------------------------------------------------------- -->
+
+  <section class="cta-section">
+    <div class="cta-inner">
+      <h2>Ready to Start Your Learning Journey?</h2>
+      <p>Join over 4,500 students already learning on EduAI. Create your free account today!</p>
+      <div class="cta-btns">
+        <a href="#register" class="btn-primary btn-lg">Get Started For Free</a>
+        <a href="#courses" class="btn-ghost btn-lg">Browse Courses</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- -------------------------------------------------------
+       Mostafa Mahmoud Ahmed Abdel Shafy
+       Role: Courses Frontend UI — Courses Detail & Lessons
+       ------------------------------------------------------- -->
+
+  <section class="section lessons-section">
+    <div class="section-head">
+      <span class="section-tag">Sample Curriculum</span>
+      <h2>What You Will Learn</h2>
+      <p>A sneak peek into our AI course curriculum — structured for maximum clarity</p>
+    </div>
+    <div class="lessons-list">
+      <div class="lesson-item">
+        <div class="lesson-num">01</div>
+        <div class="lesson-info">
+          <div class="lesson-title">What is Artificial Intelligence?</div>
+          <div class="lesson-dur"><i class="fas fa-clock"></i> 45 min</div>
+        </div>
+        <span class="lesson-tag free">Free</span>
+      </div>
+      <div class="lesson-item">
+        <div class="lesson-num">02</div>
+        <div class="lesson-info">
+          <div class="lesson-title">Machine Learning Fundamentals</div>
+          <div class="lesson-dur"><i class="fas fa-clock"></i> 60 min</div>
+        </div>
+        <span class="lesson-tag">Enrolled</span>
+      </div>
+      <div class="lesson-item">
+        <div class="lesson-num">03</div>
+        <div class="lesson-info">
+          <div class="lesson-title">Neural Networks Explained</div>
+          <div class="lesson-dur"><i class="fas fa-clock"></i> 75 min</div>
+        </div>
+        <span class="lesson-tag">Enrolled</span>
+      </div>
+      <div class="lesson-item">
+        <div class="lesson-num">04</div>
+        <div class="lesson-info">
+          <div class="lesson-title">Building Your First AI Model</div>
+          <div class="lesson-dur"><i class="fas fa-clock"></i> 90 min</div>
+        </div>
+        <span class="lesson-tag">Enrolled</span>
+      </div>
+      <div class="lesson-item">
+        <div class="lesson-num">05</div>
+        <div class="lesson-info">
+          <div class="lesson-title">Real-World AI Projects & Deployment</div>
+          <div class="lesson-dur"><i class="fas fa-clock"></i> 120 min</div>
+        </div>
+        <span class="lesson-tag">Enrolled</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- -------------------------------------------------------
+       Mina Shafiq Samir
+       Role: CSS Design & Styling — Footer Section
+       ------------------------------------------------------- -->
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="nav-logo"><i class="fas fa-graduation-cap"></i><span>EduAI</span></div>
+        <p>Empowering students with world-class AI and programming education for a better tomorrow.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#about">Dashboard</a></li>
+          <li><a href="#register">Sign Up</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Courses</h4>
+        <ul>
+          <li><a href="#">Intro to AI</a></li>
+          <li><a href="#">Python Masterclass</a></li>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Deep Learning</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 EduAI Course Management System. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
